@@ -1,0 +1,77 @@
+// У разных тегов по умолчанию присутсвуют разные стили, которые отображаюся в разных браузерах по-разному.
+// Обнуление CSS
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+// Изменение подсчета ширины блока так, чтобы нам было удобней верстать 
+// Изменение алгоритма подсчета высоты и ширины элемента
+// box-sizing: border box; меняет алгоритм расчета на более удобный.
+// по умлочанию width и height задают ширину и высоту контента не включая в себя значения отсупов полей и границ. 
+// со значением border-box они включат все значения полей и границ (border and padding) но не внешних отступов margin
+*,*:before,*:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+// Убираем линии обводки у некоторых браузеров
+:focus,:active{outline:none;}
+a:focus,a:active{outline:none;}
+
+// Блочные элементы
+nav,footer,header,aside{display: block;}
+
+
+// Уравнивает поведение шрифтов элементов для разных браузеров
+
+html,body {
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+// Обращаемся к тегам и просим их наследовать семейство шрифта
+input,button,textarea {
+	font-family: inherit;
+}
+
+// Убираем особенности в некоторых браузерах
+
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+
+// Обнуляем все наши заголовки h
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
